@@ -1,4 +1,4 @@
-%%<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -329,15 +329,14 @@
 </head>
 <body>
     <section id="abstract">
-      <p>The Data Privacy Vocabulary [[DPV]] enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [[GDPR]]. This document describes the DPV specification along with its data model.</p>
-      <p>The canonical URL for DPV is <a href="https://w3id.org/dpv">https://w3id.org/dpv</a> which contains (this) specification. The namespace for DPV terms is <a href="https://w3id.org/dpv#"><code>https://w3id.org/dpv#</code></a>, the suggested prefix is <code>dpv</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
+      <p>This document provides additional details and examples for entity concepts in the Data Privacy Vocabulary [[DPV]], and is a companion to the [[DPV]] specification.</p>
       <section id="sotd">
     <p style="color: red; font-weight: bold;">The DPVCG is currently updating the specifications to v2. This document is a draft and may change as part of this process.</p>
     <p><strong>Contributing:</strong> The DPVCG welcomes participation to improve the DPV and associated resources, including expansion or refinement of concepts, requesting information and applications, and addressing open issues. <a href="https://github.com/w3c/dpv/blob/master/contributing.md">See contributing page</a> for further information.</p>
   </div>
 </section>
 
-<section id="dpv-document-family" class="noTOC">
+      <section id="dpv-document-family" class="noTOC">
     <h2>DPV and Related Resources</h2>
     <p>[[[DPV]]]: is the base/core specification for the 'Data Privacy Vocabulary', which is extended for Personal Data [[PD]], Locations [[LOC]], Risk Management [[RISK]], Technology [[TECH]], and [[AI]]. Specific [[LEGAL]] extensions are also provided which model jurisdiction specific regulations and concepts - see the <a href="https://w3id.org/dpv/legal#dpv-extensions">complete list of extensions</a>. To support understanding and applications of [[DPV]], various guides and resources [[GUIDES]] are provided, including a [[PRIMER]].</p>
     <p>[[DPV]] and related resources are published on <a href="https://github.com/w3c/dpv/releases">GitHub</a>. For a general overview of the Data Protection Vocabularies and Controls Community Group [[DPVCG]], its history, deliverables, and activities - refer to <a href="https://www.w3.org/community/dpvcg/"><u>DPVCG Website</u></a>. For meetings, see the <a href="https://www.w3.org/groups/cg/dpvcg/calendar">DPVCG calendar</a>.</p>
@@ -348,13 +347,12 @@
     </section>
   <section id="introduction">
     <h2>Introduction</h2>
-    <blockquote>This document assumes the reader is familiar with DPV through the [[[PRIMER]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
-    <div class="issue" title="Review section descriptions"></div>
   <figure>
     <img src="../../../media/Entities.png" />
     <figcaption></figcaption>
   </figure>
-  <p>DPV relies on existing well-founded interpretations for its concepts, which in this case relate to <i>Entity</i> as a generic universal concept and <i>LegalEntity</i> specifically referring to roles defined legally or within legal norms. Expanding on these, DPV provides a taxonomy of entities based on their application within laws and use-cases in the form of <a href="#vocab-entities-legalrole"><i>Legal roles</i></a>, such as [=DataController=], [=DataSubject=], and [=Authority=]. Later, these concepts are expanded into taxonomies for different kinds of entities categorised under a common concept. For example, <a href="#vocab-entities-datasubject">categories of <i>Data Subjects</i></a> such as [=Adult=], [=User=], or [=Employee=]; or <a href="#vocab-entities-authorities">kinds of <i>Authorities</i></a>, or <a href="#vocab-entities-organisation">categories of <i>Organisations</i></a>.</p>
+  <p>[=Entity=] in DPV refer to the concept of 'entity' as defined in law and society, which can be organisations or individuals, and which is distinct from the technical concept of 'agent'. A [=LegalEntity=] specifically refers to entities recognised legally or within legal norms. Expanding on these, DPV provides a taxonomy of entities based on their application within laws and use-cases in the form of <a href="#vocab-entities-legalrole"><i>Legal roles</i></a>, such as [=DataController=], [=DataSubject=], and [=Authority=]. Later, these concepts are expanded into taxonomies for different kinds of entities categorised under a common concept. For example, <a href="#vocab-entities-datasubject">categories of <i>Data Subjects</i></a> such as [=Adult=], [=User=], or [=Employee=]; or <a href="#vocab-entities-authorities">kinds of <i>Authorities</i></a>, or <a href="#vocab-entities-organisation">categories of <i>Organisations</i></a>.</p>
+  <p>The relation [=hasEntity=] is used to refer to an entity or associate it with a context, for example to indicate its involvement. More specific relations are provided to indicate legal roles, such as [=hasDataSubject=], [=hasDataController=], [=hasDataProcessor=], and so on.</p>
 
   <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -458,24 +456,34 @@
 </ul></div>
     <section id="desc-data-controller">
         <h3>Data Controller</h3>
-        <div class="issue" title="Content missing - Data Controller"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <aside class="example" title="Example of an example">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <code><pre>ex:Alpha a dpv:DataController ;
-  dpv:hasName "Alpha Inc." ;
-  ex:lorem ex:ipsum "example" .</pre></code>
-        </aside>
+        <p>A Data Controller is the entity responsible for the determination of processing of personal data. The exact meaning of 'responsible' and 'determination' varies across jurisdictions and laws. For example, [[GDPR]] defines a controller as the entity that determines 'means' and 'purposes' of processing personal data i.e. the entity that not only determine which data is being processed, but also the why and how of it. DPV does not prescribe to any particular jurisdictional definition, and the term 'Controller' here is analogous to the ISO term 'PII Controller'.</p>
+        <p>To indicate the name, address, and contact details for a controller, the properties `hasName`, `hasAddress`, and `hasContact` are provided. Other properties can also be used to provide this as well as additional details, such as [[[FOAF]]] or <a href="https://schema.org/Organization">Schema.org</a>.</p>
+          <aside class="example" title="Nesting Processes">
+<p>Consider the example where <em>Acme</em>, as a <em>DataController</em>, maintains records of its processing activities using <code>Process</code> to represent one of its services. In this, it collects email, uses it for internal analyses based on <em>Legitimate Interests</em>, and also sends marketing information by using a processor based on the data subject's consent. Using nesting of processes, the information can be expressed at a granular level representing service, individual purposes, and so on.</p>    <pre class="nohighlight"><code>ex:Acme rdf:type dpv:DataController .
+ex:AcmeMarketing rdf:type dpv:Process ;
+    dpv:hasProcess ex:InternalAnalytics ;
+    dpv:hasProcess ex:SendingNewsletters .
+
+ex:InternalAnalytics rdf:type dpv:Process ;
+    dpv:hasPersonalData pd:Email ;
+    dpv:hasProcessing dpv:Collect, dpv:Store ;
+    dpv:hasPurpose dpv:InternalResourceOptimisation ;
+    dpv:hasLegalBasis dpv:LegitimateInterestOfController .
+
+ex:FooTech rdf:type dpv:DataProcessor .
+ex:SendingNewsletters rdf:type dpv:Process ;
+    dpv:hasPersonalData pd:Email ;
+    dpv:hasProcessing dpv:Share ;
+    dpv:hasPurpose dpv:Marketing ;
+    dpv:hasDataProcessor ex:FooTech ;
+    dpv:hasLegalBasis dpv:Consent .
+</code></pre>
+    <p><small>(<em>META</em> 
+      Example ID: <a href="https://w3id.org/dpv/examples#E0006"><code>E0006</code></a>;
+link: <a href="https://w3id.org/dpv/examples/E0006.ttl">source file</a>;      contributed by Harshvardhan J. Pandit on 2024-06-10)
+    </small></p>
+  </aside>
+
     </section>
 
     <section id="desc-data-processor">
