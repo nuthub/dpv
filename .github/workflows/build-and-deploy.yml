@@ -1,0 +1,55 @@
+name: Build Vocabularies and Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "dev", "gdng2" ]
+ 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+  
+jobs:
+  
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip 
+          pip install uv
+      - name: Download files
+        run: |
+          cd code
+          uv run 100_download_CSV.py
+      - name: Serialize RDF
+        run: |
+          cd code
+          uv run 200_serialise_RDF.py
+      - name: Generate HTML
+        run: |
+          cd code
+          uv run 300_generate_HTML.py
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
