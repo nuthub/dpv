@@ -66,7 +66,7 @@
 
 <section id="introduction">
   <h2>Introduction</h2>
-  <p>Concepts in DPV can be aligned with those from the [[[ODRL-VOCAB]]] by using [[SKOS]] relations. In addition, to enable the use of DPV in ODRL policies, certain relations are expressed as instances of ODRL's Operand concepts. This mapping is also provided in <a href="dpv-odrl.ttl">RDF</a> and <a href="dpv-odrl.csv">CSV</a> form for convenience. This mapping will assist the [[[GUIDE-ODRL]]].</p>
+  <p>Concepts in DPV can be aligned with those from the [[[ODRL-VOCAB]]] by using [[SKOS]] relations. In addition, to enable the use of DPV in ODRL policies, certain relations are expressed as instances of ODRL's Left Operand concepts. This mapping is also provided in <a href="dpv-odrl.ttl">RDF</a> and <a href="dpv-odrl.csv">CSV</a> form for convenience. This mapping will assist the [[[GUIDE-ODRL]]].</p>
   <p>The DPVCG aims to create and provide a profile containing DPV concepts to enable the use of all DPV vocabularies in adherence with ODRL recommendations, and welcomes contributions and participation in this process.</p>
   <aside class="note" title="Profiles that contributed to this mapping">
     <p>
@@ -110,8 +110,16 @@
               <td class="tg-0lax"><a href="https://w3id.org/dpv/pd#" target="_blank">https://w3id.org/dpv/pd#</a></td>
           </tr>
           <tr>
+              <td class="tg-0lax">rdf</td>
+              <td class="tg-0lax"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#" target="_blank">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></td>
+          </tr>
+          <tr>
               <td class="tg-0lax">skos</td>
               <td class="tg-0lax"><a href="http://www.w3.org/2004/02/skos/core#" target="_blank">http://www.w3.org/2004/02/skos/core#</a></td>
+          </tr>
+          <tr>
+              <td class="tg-0lax">tech</td>
+              <td class="tg-0lax"><a href="https://w3id.org/dpv/tech#" target="_blank">https://w3id.org/dpv/tech#</a></td>
           </tr>
       </tbody>
   </table>
@@ -119,295 +127,751 @@
 
 <section id="mapping">
   <h2>Mapping</h2>
-  <table>
-    <thead>
-        <tr>
-            <th>External Concept</th>
-            <th>DPV Concept</th>
-            <th>Mapping Type</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>odrl:Party</td>
-            <td>dpv:Entity</td>
-            <td>skos:narrower</td>
-        </tr>
-        <tr>
-            <td>odrl:Action</td>
-            <td>dpv:Processing</td>
-            <td>skos:narrower</td>
-        </tr>
-        <tr>
-            <td>odrl:Asset</td>
-            <td>dpv:Data</td>
-            <td>skos:narrower</td>
-        </tr>
-        <tr>
-            <td>odrl:Asset</td>
-            <td>ai:AISystem</td>
-            <td>skos:narrower</td>
-        </tr>
-        <tr>
-            <td>odrl:Asset</td>
-            <td>ai:Model</td>
-            <td>skos:narrower</td>
-        </tr>
-        <tr>
-            <td>odrl:Asset</td>
-            <td>dpv:PersonalData</td>
-            <td>skos:narrower</td>
-        </tr>
-        <tr>
-            <td>odrl:Policy</td>
-            <td>dpv:LegalAgreement</td>
-            <td>skos:narrower</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Purpose</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:TechnicalOrganisationalMeasure</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:TechnicalMeasure</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:OrganisationalMeasure</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:LegalMeasure</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:PhysicalMeasure</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Location</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:hasJurisdiction</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Law</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:LegalBasis</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Recipient</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Right</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Risk</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Data</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:PersonalData</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:DataController</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:DataProcessor</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:HumanSubject</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:DataSubject</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Duration</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Frequency</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Justification</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:Technology</td>
-            <td>rdf:type</td>
-        </tr>
-        <tr>
-            <td>odrl:LeftOperand</td>
-            <td>dpv:DataSource</td>
-            <td>rdf:type</td>
-        </tr>
-    </tbody>
-  </table>
-  <aside class="example" title="Example specifying a mapping from a DPV Process to an ODRL Policy">
-      <p>A DPV process describing a personal data handling activity:</p>
-      <pre><code>
-        ex:Alpha a dpv:DataController .
-        ex:AlphaPaymentManagement a dpv:Process ;
-          dpv:hasDataController ex:Alpha ;
-          dpv:hasPersonalData pd:BankAccount ;
-          dpv:hasProcessing dpv:Use ;
-          dpv:hasPurpose dpv:PaymentManagement .
-      </code></pre>
-      <p>Can be defined as the following ODRL policy:</p>
-      <pre><code>
-      ex:policy-AlphaPaymentManagement a odrl:Policy ;
-        dcterms:creator ex:Alpha ;
-        dcterms:issued "2022-11-08T17:26:35"^^xsd:dateTime ;
-        odrl:uid ex:policy-AlphaPaymentManagement ;
-        odrl:profile dpv-odrl: ;
-        odrl:permission [
-          odrl:assigner ex:Alpha ;
-          odrl:target pd:BankAccount ;
-          odrl:action dpv-odrl:Use ;
-          odrl:constraint [
-            odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:PaymentManagement ] ] .
-      </code></pre>
+
+  <p>
+    The [[[ODRL-MODEL]]] is a W3C Recommendation for policy representation that provides the syntax and vocabulary to express conditions for the usage of content and services. 
+    While ODRL contains a standardised vocabulary to express such statements [[ODRL-VOCAB]], it is domain- and jurisdiction-agnostic, and as such, it does not contain concepts to refer to specific data protection requirements.
+    In this context, by defining a mapping between DPV and ODRL, we can explicitly define policies that contain legal terms.
+  </p>
+  <p>
+    ODRL's core concepts are rules, i.e., permissions, prohibitions, and obligations, which can used to represent permitted, prohibited, and obligatory actions over a certain asset, which can, cannot or are required to be meet by involved parties. Furthermore, policies may be further restricted with constraints, e.g., temporal or purpose constraints, and duties, e.g. delete after using.
+  </p>
+  <p>
+    Thus, in this document, we map DPV concepts to ODRL terms in order to, e.g., express that an ODRL party is a DPV data controller, or to restrict a certain permissive rule to be used for a certain DPV purpose. This mapping was performed following the ODRL Profile Mechanism specified in the ODRL standard [[ODRL-MODEL]], as well as following the best practices documented in the <a href="https://w3c.github.io/odrl/profile-bp/">ODRL V2.2 Profile Best Practices report</a>.
+  </p>
+
+  <section id="entities">
+    <h3>Entities</h3>
+    
+    <p>
+        DPV's entities are human and legal stakeholders, including individuals, organisations, institutions, or authorities.
+        As such, they can be mapped as instances of ODRL parties and used as assigners or assignees of ODRL policies. 
+    </p>
+    <p>
+        Furthermore, given the hierarchical nature of DPV, certain entity terms can also be used as a left operand to filter ODRL party collections, e.g., given a party collection that contains multiple human subjects of different types, using DPV's <code>HumanSubject</code> as the left operand and <code>Patient</code> as the right operand allows the expression of a policy which is only applicable to this type of human subject.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:Party</td>
+                <td>dpv:Entity</td>
+                <td>skos:narrower</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Entity</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Agent</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:LegalEntity</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:HumanSubject</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Organisation</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Recipient</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:recipient</td>
+                <td>dpv:Recipient</td>
+                <td>skos:narrower</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>tech:Actor</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="processing">
+    <h3>Processing</h3>
+    
+    <p>
+        DPV's processing concepts are related to operations which can be performed over data. As such, they can be used as actions in ODRL policies. Furthermore, a few DPV processing operations have a close match in the ODRL actions taxonomy. Such a relation is represented using the <code>skos:related</code> property, e.g., <code>odrl:aggregate</code> is similar to <code>dpv:Aggregate</code>.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:Action</td>
+                <td>dpv:Processing</td>
+                <td>skos:narrower</td>
+            </tr>
+            <tr>
+                <td>odrl:acceptTracking</td>
+                <td>dpv:Tracking</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:aggregate</td>
+                <td>dpv:Aggregate</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:anonymize</td>
+                <td>dpv:Anonymise</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:delete</td>
+                <td>dpv:Delete</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:derive</td>
+                <td>dpv:Derive</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:display</td>
+                <td>dpv:Display</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:modify</td>
+                <td>dpv:Modify</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:move</td>
+                <td>dpv:Move</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:transfer</td>
+                <td>dpv:Transfer</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:transform</td>
+                <td>dpv:Transform</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:use</td>
+                <td>dpv:Use</td>
+                <td>skos:related</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="data">
+    <h3>Data</h3>
+
+    <p>
+        DPV's data concepts can be used to indicate the use of any data, personal and non-personal. As such, they can be used as assets in ODRL policies. Furthermore, DPV's data source concepts can be used to refine asset collections and the personal data categories in the [[PD]] extension can also be used as constraints to refine party collections, e.g., by gender or age.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:Asset</td>
+                <td>dpv:Data</td>
+                <td>skos:narrower</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Data</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:PersonalData</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>pd:Age</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>pd:Gender</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>pd:Nationality</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:DataSource</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="tech">
+    <h3>Technologies</h3>
+
+    <p>
+        DPV's technology concepts can be used to indicate the use of any technology, including AI. As such, they can be used as assets in ODRL policies to define the conditions of usage of such resources. Furthermore, DPV's [[TECH]] and [[AI]] extensions include technological concepts that can also be used to further constraint rules within ODRL policies, e.g., a certain asset can only be used to train an AI model.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:Asset</td>
+                <td>ai:Technology</td>
+                <td>skos:narrower</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Technology</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="purpose"> 
+    <h3>Purpose</h3>
+
+    <p>
+        DPV's purpose concepts can be utilised to restrict usage of a certain asset to a particular purpose or set of purposes, e.g., allow a certain asset to be used only for research and development.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Purpose</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:purpose</td>
+                <td>dpv:Purpose</td>
+                <td>skos:narrower</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="tom"> 
+    <h3>Technical and Organisational Measures</h3>
+
+    <p>
+        DPV's technical and organisational measures can be utilised to restrict usage of a certain asset only if a particular technical, organisational, legal, physical, or risk mitigation measure is in place, e.g, allow a certain asset to be used only if there is Multi-Factor Authentication.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:TechnicalOrganisationalMeasure</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:TechnicalMeasure</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:OrganisationalMeasure</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:LegalMeasure</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:PhysicalMeasure</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:RiskMitigationMeasure</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="location">
+    <h3>Location & Jurisdiction</h3>
+
+    <p>
+        DPV's location concepts can be utilised to restrict usage of a certain asset to particular location. For this purpose, the [[[LOC]]] extension provides concepts regarding locations such as countries and regions based on the ISO 3166 standards.
+    </p>
+    <p>
+        Furthermore, given that DPV has the relation <code>dpv:hasJurisdiction</code> to represent locations as jurisdictions,when mapping that relation into an ODRL constraint, <code>dpv-odrl:Location</code> can also be used as a left operand
+        to indicate jurisdiction.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Location</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:spatial</td>
+                <td>dpv:Location</td>
+                <td>skos:narrower</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="legal">
+    <h3>Laws & Legal Bases</h3>
+
+    <p>
+        DPV's law and legal basis concepts can be utilised to indicate applicable laws and the legal grounds used to justify a certain processing activity, respectively. For this purpose, the [[[LEGAL]]] extensions provide concepts to represent laws, authorities, and other legal concepts in various jurisdictions.
+    </p>
+
+    <p>
+        Furthermore, consent controls can be used to require obtaining, providing, withdrawing, refusing, or reaffirming consent, and contract controls to require accepting, negotiating, offering, refusing, and terminating actions associated with a contract.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Law</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:LegalBasis</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:ConsentControl</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:ContractControl</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="temporal">
+    <h3>Duration & Frequency</h3>
+
+    <p>
+        DPV's duration and frequency concepts can be used to indicate how long a certain rule can be exercised and with what frequency, respectively. Furthermore, these DPV concepts have a close match with a few ODRL left operands. Such a relation is represented using the <code>skos:related</code> property, e.g., <code>dpv:Duration</code> has similarities with the <code>odrl:elapsedTime</code> left operand.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Duration</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:elapsedTime</td>
+                <td>dpv:Duration</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:count</td>
+                <td>dpv:Duration</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Frequency</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:timeInterval</td>
+                <td>dpv:Frequency</td>
+                <td>skos:related</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="rights-justifications"> 
+    <h3>Rights & Justifications</h3>
+
+    <p>
+        DPV's rights and justifications concepts can be used to indicate applicable rights and to provide reasons or explanations to justify a certain processing activity, respectively. Both concepts can be used in isolation, or they can be used simultaneously to justify the exercising of a certain activity, e.g., a data subject wants to exercise their GDPR right to erasure given that their personal data is no longer required to be processed in relation to the purposes for which it was initially processed. Furthermore, the [[[JUSTIFICATIONS]]] extension provides a taxonomy of concepts to use as justifications for certain activities.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Right</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Justification</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="risk"> 
+    <h3>Risk</h3>
+
+    <p>
+        DPV's risk concepts can be used to permit or prohibit the usage of certain assets depending on the risks associated to them, including impacts and consequences of using them, as well as calculated likelihood and severity. For this purpose, the [[[RISK]]] extension provides concepts related to risk sources, impacts, consequences or risk mitigation measures.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Risk</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:RiskLevel</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:RiskControl</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Likelihood</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Severity</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Consequence</td>
+                <td>rdf:type</td>
+            </tr>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Impact</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="sector"> 
+    <h3>Sector</h3>
+
+    <p>
+        DPV's sector concepts can be used to permit or prohibit the usage of certain assets depending on the area of application or domain that they are to be used. For this purpose, the [[[EU-AIAct]]] extension provides concepts to represent, e.g., the education or the employment sector.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Sector</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
+  <section id="status">
+    <h3>Status</h3>
+
+    <p>
+        DPV's status concepts can be used to indicate information regarding the status or state of a certain process or activity. For instance, it can be used to permit the usage of a certain asset only if the consent status for that usage is valid, i.e., using the <code>dpv:ConsentStatusValidForProcessing</code> concept.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:LeftOperand</td>
+                <td>dpv:Status</td>
+                <td>rdf:type</td>
+            </tr>
+        </tbody>
+    </table>
+
+  </section>
+
+  <section id="rules"> 
+    <h3>Rules</h3>
+
+    <p>
+        DPV's sector concepts can be used to permit or prohibit the usage of certain assets depending on the area of application or domain that they are to be used. For this purpose, the [[[EU-AIAct]]] extension provides concepts to represent, e.g., the education or the employment sector.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:Permission</td>
+                <td>dpv:Permission</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:Prohibition</td>
+                <td>dpv:Prohibition</td>
+                <td>skos:related</td>
+            </tr>
+            <tr>
+                <td>odrl:Duty</td>
+                <td>dpv:Obligation</td>
+                <td>skos:related</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <aside class="note" title="dpv:Recommendation and dpv:Deterrence rules can be considered for ODRL 3.0">
+        <p>
+            <code>dpv:Recommendation</code> and <code>dpv:Deterrence</code> rules are modelled in DPV, with no equivalent concepts being present in ODRL. These rules can be considered for ODRL 3.0 or can be modelled as ODRL rules in this profile extension.
+        </p>
     </aside>
-</section>
 
-<section id="entities">
-  <h2>Entities</h2>
-  <aside class="issue" title="Proper modelling of an entity as an ODRL party and left operand">
-    <p>
-       Check how to correctly model entities as both ODRL party and left operand.
-       One option can be to model 2 different concepts to have distinct semantics.
-    </p>
-  </aside>
-  <aside class="issue" title="Relation between `dpv:Recipient` mapping as a left operand and `odrl:recipient`">
-    <p>
-       Connection to odrl:recipient can also me mapped out;
-       <code>dpv-odrl:Recipient skos:narrower odrl:recipient .<code> is an option.
-    </p>
-  </aside>
-</section>
+    <aside class="note" title="dpv:RuleFulfilmentStatus to be aligned with ODRL formal semantics work">
+        <p>
+            DPV's <code>RuleFulfilmentStatus</code> concepts include terms to represent whether a prohibition has been violated or an obligation has been fulfilled. A similar initiative is undergoing in the ODRL CG based on the 
+            <a href="https://w3id.org/force/compliance-report">ODRL Compliance Report Model</a>, which is a model and vocabulary that can be used to elaborate the result of an evaluation of ODRL Policy, according to the <a href="https://w3c.github.io/odrl/formal-semantics/">formal semantics of ODRL specification</a>. Once this specification is finalised, DPV's and ODRL's concepts should be aligned for this particular case as well.
+        </p>
+    </aside>
 
-<section id="data">
-  <h2>Data</h2>
-  <aside class="issue" title="Proper modelling of data-related concepts as an ODRL asset and left operand">
-    <p>
-       Check how to correctly model data and personal data as both ODRL asset and left operand.
-       One option can be to model 2 different concepts to have distinct semantics.
-    </p>
-  </aside>
-  <aside class="issue" title="Personal data categories in the PD extension can also be used as constraints">
-    <p>
-       Personal data categories in the PD extension can also be used as constraints to refine party collections,
-       e.g., by gender or age.
-    </p>
-  </aside>
-</section>
+  </section>
 
-<section id="purpose"> 
-  <h2>Purpose</h2>
-  <aside class="issue" title="Relation between `dpv:Purpose` mapping as a left operand and `odrl:purpose`">
-    <p>
-       Connection to odrl:purpose can also be mapped out;
-       <code>dpv-odrl:Purpose skos:narrower odrl:purpose .<code> is an option.
-    </p>
-  </aside>
-</section>
+  <section id="policies"> 
+    <h3>Contractual Terms and Legal Agreements</h3>
 
-<section id="context">
-  <h2>Context</h2>
-  <aside class="issue" title="Mapping of `dpv:Context` to an ODRL constraint">
     <p>
-        <code>dpv:Context</code> is a very broad concept which means that a constraint with context as
-        the left operand would result in difficulties in how to model the respective right operand.
-        Moreover, without concrete semantics its enforcement would be difficult, i.e., in a policy engine.
+        DPV's contractual clauses and legal agreement concepts can be mapped as additional types of ODRL policies.
     </p>
-  </aside>
-  <aside class="issue" title="Relation between `dpv:Duration` and `dpv:Frequency` mapping as a left operand and ODRL's temporal/frequency left operands">
-    <p>
-       Connection to ODRL's temporal/frequency left operands and in particular to odrl:elapsedTime or odrl:count can also be mapped out.
-    </p>
-  </aside>
-</section>
 
-<section id="measures">
-  <h2>Measures</h2>
-  <aside class="issue" title="DPV's terms for contractual terms and legal agreements can be modelled as types of ODRL policies">
-    <p>
-        Concepts such as <code>DataHandlingClause</code> or <code>dpv:NDA</code> can be modelled as new types of <code>odrl:Policy</code>,
-        however their semantics should be carefully discussed, particularly in terms of mandatory/optional rules, assets, and party roles,
-        as well as the constraints that need to be supported.
-    </p>
-  </aside>
-</section>
+    <aside class="note" title="DPV's terms for contractual clauses and legal agreements can be modelled as types of ODRL policies">
+        <p>
+            While the mapping below can be used to instantiate DPV concepts such as <code>DataHandlingClause</code> or <code>dpv:NDA</code> as a <code>odrl:Policy</code>, their semantics and practical implementation should be carefully discussed, particularly in terms of mandatory/optional rules, assets, and party roles, as well as the constraints that need to be supported. The DPVCG welcomes contributions for this line of work.
+        </p>
+    </aside>
 
-<section id="location">
-  <h2>Location & Jurisdiction</h2>
-  <aside class="issue" title="Mapping of jurisdiction has an ODRL left operand">
-    <p>
-        Given that DPV has the relation <code>dpv:hasJurisdiction</code> to represent locations as jurisdictions,
-        when mapping that relation into an ODRL constraint, having <code>dpv-odrl:Location</code> as a left operand
-        should be enough to enforce both locations and jurisdictions in a policy engine, as the right operands will be locations.
-    </p>
-  </aside>
-  <aside class="issue" title="Relation between `dpv:Location` mapping as a left operand and ODRL's spatial left operands">
-    <p>
-       Connection to ODRL's spatial left operands and in particular to odrl:spatial can also me mapped out.
-    </p>
-  </aside>
+    <table>
+        <thead>
+            <tr>
+                <th>External Concept</th>
+                <th>DPV Concept</th>
+                <th>Mapping Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:ContractAmendmentClause</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:ContractConfidentialityClause</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:ContractDisputeResolutionClause</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:ContractJurisdictionClause</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:ContractTerminationClause</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:TermsOfService</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:DataHandlingClause</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:LegalAgreement</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:ConfidentialityAgreement</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:NDA</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+            <tr>
+                <td>odrl:Policy</td>
+                <td>dpv:StatisticalConfidentialityAgreement</td>
+                <td>rdfs:subClassOf</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>
+
 </section>
 
 <section id="odrl-operators">
   <h2>Usage of ODRL operators</h2>
-  <aside class="issue" title="Specifying which ODRL operators should used with which left operands">
+  <aside class="note" title="Specifying which ODRL operators should used with which left operands">
     <p>
        The ODRL vocabulary has a set of 12 defined constraint operators to express the relation(s) between
        left and right operands. Given that multiple operators can be used to restrict this relation, 
-       the left operand & operator usage should be refined for each left operand, e.g.,
+       the left operand and operator usage should be refined for each left operand, e.g.,
        the <code>odrl:isA</code> operator should not be used with the <code>dpv-odrl:Frequency</code> left operand.
-       This validation can be done using, e.g., SHACL shapes.
+       This validation can be done using, e.g., SHACL shapes. The DPVCG welcomes contributions for this line of work.
+    </p>
+  </aside>
+
+  <aside class="issue" title="Missing semantic operators">
+    <p>
+       The ODRL vocabulary does not contain operators to evaluate semantic relations such as `a subclass of`.
+       It also does not provide any operator to express that multiple relations are possible, e.g., the left operand
+       can be an instance, a subclass, or an instance of a subclass, of the right operand.
+       This issue is also being tracked in the ODRL CG, in issue
+       <a href="https://github.com/w3c/odrl/issues/28">#28</a>.
+    </p>
+  </aside>
+  
+  <aside class="issue" title="Missing negation operator for instances">
+    <p>
+       The ODRL vocabulary does not contain an `is not a` operator to express that something is not an instance of the right operand.
+       This issue is also being tracked in the ODRL CG, in issue
+       <a href="https://github.com/w3c/odrl/issues/27">#27</a>.
     </p>
   </aside>
 </section>
