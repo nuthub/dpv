@@ -22,6 +22,10 @@
     doJsonLd: true,
     lint: { "no-unused-dfns": false },
     editors: [{
+      "name": "Beatriz Esteves",
+      url: "https://w3id.org/people/besteves",
+      "company": "{{ "Beatriz Esteves" | generate_author_affiliation }}"
+    }, {
       name: "Harshvardhan J. Pandit",
       url: "https://harshp.com",
       "company": "{{ "Harshvardhan J. Pandit" | generate_author_affiliation }}"
@@ -99,286 +103,55 @@
   <section>
     <h3>Mapping: DPV x ODRL terms</h3>
     <p>
-      Mapping of how each DPV term should be used within an ODRL policy.
-      This information will be represented in machine-readable form as an ODRL profile,
-      which is being developed by the DPVCG at 
+      The mapping of how each DPV term should be used within an ODRL policy is being developed by the DPVCG at 
       <a href="https://w3id.org/dpv/mappings/odrl#" target="_blank">https://w3id.org/dpv/mappings/odrl#</a>,
       following the best practices documented in the
       <a href="https://w3c.github.io/odrl/profile-bp/" target="_blank">ODRL V2.2 Profile Best Practices</a> report.
+      This mapping is also represented in machine-readable form as an ODRL profile.
     </p>
-    <table>
-      <thead>
-        <tr>
-          <th>DPV (rows), ODRL (columns)</th>
-          <th>Party</th>
-          <th>Action</th>
-          <th>Asset</th>
-          <th>LeftOperand</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>dpv:Entity</th>
-          <td>X</td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Processing</th>
-          <td></td>
-          <td>X</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>dpv:Data</th>
-          <td></td>
-          <td></td>
-          <td>X</td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:PersonalData</th>
-          <td></td>
-          <td></td>
-          <td>X</td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>ai:AISystem</th>
-          <td></td>
-          <td></td>
-          <td>X</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>ai:Model</th>
-          <td></td>
-          <td></td>
-          <td>X</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>dpv:Purpose</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:TechnicalOrganisationalMeasure</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:TechnicalMeasure</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:OrganisationalMeasure</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:LegalMeasure</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:PhysicalMeasure</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Location</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Law</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:LegalBasis</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Recipient</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Right</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Risk</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:DataController</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:DataProcessor</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:HumanSubject</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:DataSubject</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Duration</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Frequency</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Justification</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:Technology</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <th>dpv:DataSource</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>X</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  <section>
-    <h3>Process</h3>
-    <p>Unless stated otherwise, i.e., using DPV Rules, a DPV process instantiation must be interpreted as a permissive policy.</p>
-    <aside class="example" title="Example specifying a mapping from a DPV Process to an ODRL Policy">
-      <p>A DPV process describing a personal data handling activity:</p>
-      <pre><code>
-        ex:Alpha a dpv:DataController .
-        ex:AlphaPaymentManagement a dpv:Process ;
-          dpv:hasDataController ex:Alpha ;
-          dpv:hasPersonalData pd:BankAccount ;
-          dpv:hasProcessing dpv:Use ;
-          dpv:hasPurpose dpv:PaymentManagement .
-      </code></pre>
-      <p>Can be defined as the following ODRL policy:</p>
-      <pre><code>
-      ex:policy-AlphaPaymentManagement a odrl:Policy ;
-        dcterms:creator ex:Alpha ;
-        dcterms:issued "2022-11-08T17:26:35"^^xsd:dateTime ;
-        odrl:uid ex:policy-AlphaPaymentManagement ;
-        odrl:profile dpv-odrl: ;
-        odrl:permission [
-          odrl:assigner ex:Alpha ;
-          odrl:target pd:BankAccount ;
-          odrl:action dpv-odrl:Use ;
-          odrl:constraint [
-            odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:PaymentManagement ] ] .
-      </code></pre>
-    </aside>
+    <p>
+      The following subsections provide examples of ODRL policies that use the developed mapping.
+    </p>
   </section>
   <section>
     <h3>Entities</h3>
     <p>DPV entities can be used as assigners or assignees of ODRL policies, as well as a left operand to filter ODRL party collections.</p>
-     <aside class="example" title="Example specifying a DPV data controller as the assigner of an ODRL Policy">
+     <aside class="example" title="Example specifying a DPV data controller as the assigner of an ODRL Policy.">
       <pre><code>
-      ex:policy-AlphaPaymentManagement a odrl:Policy ;
-        dcterms:issued "2022-11-08T17:26:35"^^xsd:dateTime ;
-        odrl:uid ex:policy-AlphaPaymentManagement ;
-        odrl:profile dpv-odrl: ;
-        odrl:permission [
-          odrl:assigner [ a dpv:DataController ] ;
-          odrl:target pd:BankAccount ;
-          odrl:action dpv-odrl:Use ;
-          odrl:constraint [
-            odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:PaymentManagement ] ] .
+        ex:policy-entity a odrl:Policy ;
+          odrl:uid ex:policy-entity ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:DataController ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Purpose ;
+              odrl:operator odrl:isA ;
+              odrl:rightOperand dpv:PaymentManagement ] ] .
+
+        ex:DataController a dpv-odrl:DataController .
       </code></pre>
     </aside>
     <aside class="example" title="Example specifying an ODRL party collection refinement using DPV entity terms.">
       <pre><code>
-      ex:policy-AlphaPaymentManagement a odrl:Policy ;
-        dcterms:issued "2022-11-08T17:26:35"^^xsd:dateTime ;
-        odrl:uid ex:policy-AlphaPaymentManagement ;
-        odrl:profile dpv-odrl: ;
-        odrl:permission [
-          odrl:assigner [ 
-            a dpv:PartyCollection ;
-            odrl:source ex:entities ;
-            odrl:refinement [
-              odrl:leftOperand dpv-odrl:Entity ;
+        ex:policy-partycollection a odrl:Policy ;
+          odrl:uid ex:policy-partycollection ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner [ 
+              a odrl:PartyCollection ;
+              odrl:source ex:entities ;
+              odrl:refinement [
+                  odrl:leftOperand dpv-odrl:Entity ;
+                  odrl:operator odrl:isA ;
+                  odrl:rightOperand dpv:AcademicScientificOrganisation ] ] ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Purpose ;
               odrl:operator odrl:isA ;
-              odrl:rightOperand dpv:AcademicScientificOrganisation ]] ;
-          odrl:target pd:BankAccount ;
-          odrl:action dpv-odrl:Use ;
-          odrl:constraint [
-            odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:PaymentManagement ] ] .
+              odrl:rightOperand dpv:PaymentManagement ] ] .
       </code></pre>
     </aside>
   </section>
@@ -391,95 +164,352 @@
     </p>
     <aside class="example" title="Example specifying that usage of asset should be done in Belgium.">
       <pre><code>
-      ex:policy-AlphaPaymentManagement a odrl:Policy ;
-        dcterms:issued "2022-11-08T17:26:35"^^xsd:dateTime ;
-        odrl:uid ex:policy-AlphaPaymentManagement ;
-        odrl:profile dpv-odrl: ;
-        odrl:permission [
-          odrl:action [ 
-            rdf:value dpv-odrl:Use ;
-            odrl:refinement [
-              odrl:leftOperand dpv-odrl:Location ;
-              odrl:operator odrl:eq ;
-              odrl:rightOperand loc:BE ]] ;
-          odrl:target pd:BankAccount ;
-          odrl:assigner ex:entity ;
-          odrl:constraint [
-            odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:PaymentManagement ] ] .
+        ex:policy-actionrefinement a odrl:Policy ;
+          odrl:uid ex:policy-actionrefinement ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:action [ 
+              rdf:value dpv-odrl:Use ;
+              odrl:refinement [
+                  odrl:leftOperand dpv-odrl:Location ;
+                  odrl:operator odrl:eq ;
+                  odrl:rightOperand loc:BE ] ] ;
+            odrl:target dpv-odrl:BankAccount ;
+            odrl:assigner ex:entity ] .
       </code></pre>
     </aside>
   </section>
   <section>
-    <h3>Assets</h3>
+    <h3>Data</h3>
     <p>
       DPV data and personal data types can be used as assets of ODRL policies, as well as a left operand to filter ODRL asset collections.
-      The AI system and model concepts, specified in DPV's extension for AI technologies, can also be used as assets of ODRL policies.
     </p>
     <aside class="example" title="Example specifying an ODRL asset collection refinement using DPV data terms.">
       <pre><code>
-      ex:policy-AlphaPaymentManagement a odrl:Policy ;
-        dcterms:issued "2022-11-08T17:26:35"^^xsd:dateTime ;
-        odrl:uid ex:policy-AlphaPaymentManagement ;
-        odrl:profile dpv-odrl: ;
-        odrl:permission [
-          odrl:target [ 
-            a dpv:AssetCollection ;
-            odrl:source ex:data-catalog ;
-            odrl:refinement [
-              odrl:leftOperand dpv-odrl:PersonalData ;
+        ex:policy-assetcollection a odrl:Policy ;
+          odrl:uid ex:policy-assetcollection ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:target [ 
+              a odrl:AssetCollection ;
+              odrl:source ex:data-catalog ;
+              odrl:refinement [
+                odrl:leftOperand dpv-odrl:PersonalData ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand pd:HealthRecord ]] ;
+            odrl:assigner ex:entity ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Purpose ;
               odrl:operator odrl:isA ;
-              odrl:rightOperand pd:HealthRecord ]] ;
-          odrl:assigner ex:entity ;
-          odrl:action dpv-odrl:Use ;
-          odrl:constraint [
-            odrl:leftOperand dpv-odrl:Purpose ;
-            odrl:operator odrl:isA ;
-            odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+              odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
       </code></pre>
     </aside>
-  </section> 
+  </section>
   <section>
-    <h3>Constraints</h3>
-    <p></p>
-    <aside class="example" title="Example specifying a `odrl:Request` policy to exercise GDPR right to erasure">
+    <h3>Technologies</h3>
+    <p>
+      DPV's technology concepts, including AI systems and models terms, can be used as assets of ODRL policies, as well as a left operand to restrict the usage of a certain asset to a particular type of technology.
+    </p>
+    <aside class="example" title="Example specifying that usage of an asset should be done using an AI system.">
       <pre><code>
-      ex:request-delete a odrl:Request ;
-        odrl:uid ex:request-delete ;
-        odrl:profile dpv-odrl: ;
-        odrl:obligation [
-          odrl:assigner ex:subject ;
-          odrl:assignee ex:controller ;
-          odrl:target ex:subject-data ;
-          odrl:action [
-            rdf:value odrl:delete ;
-            odrl:refinement [
+        ex:policy-techconstraint a odrl:Policy ;
+          odrl:uid ex:policy-techconstraint ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:entity ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Technology ;
+              odrl:operator odrl:isA ;
+              odrl:rightOperand ai:AISystem ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Purpose</h3>
+    <p>
+      DPV's purpose concepts can be used as a left operand to restrict the usage of a certain asset to a purpose, e.g., research and development.
+    </p>
+    <aside class="example" title="Example specifying that usage of an asset should be only for the purpose of research and development.">
+      <pre><code>
+        ex:policy-purpose a odrl:Policy ;
+          odrl:uid ex:policy-purpose ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:entity ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Purpose ;
+              odrl:operator odrl:isA ;
+              odrl:rightOperand dpv:ResearchAndDevelopment ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Technical and Organisational Measures</h3>
+    <p>
+      DPV's technical and organisational measures concepts can be used as a left operand to restrict the usage of a certain asset if there is a certain measure in place.
+    </p>
+    <aside class="example" title="Example specifying that usage of an asset should be granted only if there is multi-factor authentication in place.">
+      <pre><code>
+        ex:policy-tom a odrl:Policy ;
+          odrl:uid ex:policy-tom ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:entity ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:TechnicalOrganisationalMeasure ;
+              odrl:operator odrl:isA ;
+              odrl:rightOperand dpv:MultiFactorAuthentication ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Location</h3>
+    <p>
+      DPV's location concepts can be used as a left operand to restrict the usage of a certain asset to a certain location.
+    </p>
+    <aside class="example" title="Example specifying that usage of an asset is restricted to Belgium.">
+      <pre><code>
+        ex:policy-location a odrl:Policy ;
+          odrl:uid ex:policy-location ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:entity ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Location ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand loc:BE ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Laws & Legal Bases</h3>
+    <p>
+      DPV's law and legal basis concepts can be used as a left operand to indicate applicable laws and legal basis that justify the usage of a certain asset.
+    </p>
+    <aside class="example" title="Example specifying that usage of an asset requires GDPR consent.">
+      <pre><code>
+        ex:policy-legal a odrl:Policy ;
+          odrl:uid ex:policy-legal ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:entity ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Law ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand legal-eu:law-GDPR ], [
+              odrl:leftOperand dpv-odrl:LegalBasis ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand eu-gdpr:A6-1-a ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Duration & Frequency</h3>
+    <p>
+      DPV's duration and frequency concepts can be used as a left operand to indicate how long and how many times a certain asset can be processed.
+    </p>
+    <aside class="example" title="Example specifying that the duration of usage of an asset cannot be determined.">
+      <pre><code>
+        ex:policy-duration a odrl:Policy ;
+          odrl:uid ex:policy-duration ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:entity ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Duration ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand dpv:IndeterminateDuration ] ] .
+      </code></pre>
+    </aside>
+    <aside class="example" title="Example specifying that the usage of an asset can only occur 7 days after the previous usage.">
+      <pre><code>
+        ex:policy-frequency a odrl:Policy ;
+          odrl:uid ex:policy-frequency ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:entity ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Frequency ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand "P7D"^^xsd:duration ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Rights & Justifications</h3>
+    <p>
+      DPV's rights and justification concepts can be used as left operands to indicate applicable rights and justifications for the processing of a certain asset.
+    </p>
+    <aside class="example" title="Example specifying an agreement between the data subject and the data controller to exercise the GDPR right to erasure supported by a non-necessity justification.">
+      <pre><code>
+        ex:policy-right-erasure-justification a odrl:Agreement ;
+          odrl:uid ex:policy-right-erasure-justification ;
+          odrl:profile dpv-odrl: ;
+          odrl:obligation [
+            odrl:assigner ex:subject ;
+            odrl:assignee ex:controller ;
+            odrl:target ex:subject-data ;
+            odrl:action dpv-odrl:Delete ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Right ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand eu-gdpr:A17 ], [
               odrl:leftOperand dpv-odrl:Justification ;
               odrl:operator odrl:eq ;
-              odrl:justifications:NonNecessityObjection ] ] .
+              odrl:rightOperand eu-gdpr:JustificationA17NonNecessity ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Risk</h3>
+    <p>
+      DPV's risk concepts can be used as left operands to indicate risks associated with using certain services or processing data, as well as additional risk assessment parameters such as impacts or likelihood levels.
+    </p>
+    <aside class="example" title="Example specifying a prohibition to use a service if instructions are not accessible.">
+      <pre><code>
+        ex:policy-risk a odrl:Policy ;
+          odrl:uid ex:policy-risk ;
+          odrl:profile dpv-odrl: ;
+          odrl:prohibition [
+            odrl:assignee ex:user ;
+            odrl:target ex:service ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Risk ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand risk:InstructionsInaccessible ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Sector</h3>
+    <p>
+      DPV's sector concepts can be used as left operands to indicate the sector in which certain services or data can or cannot be used.
+    </p>
+    <aside class="example" title="Example specifying that the usage of a certain AI service is only allowed for activities in the education sector.">
+      <pre><code>
+        ex:policy-sector a odrl:Policy ;
+          odrl:uid ex:policy-sector ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assignee ex:AIuser ;
+            odrl:target ex:AIservice ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Sector ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand eu-aiact:EducationSector ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Status & Processing Context</h3>
+    <p>
+      DPV's status concepts can be used as left operands to indicate the status of a certain process or activity.
+    </p>
+    <aside class="example" title="Example specifying that the usage of a certain service is only allowed if the consent status is valid for processing.">
+      <pre><code>
+        ex:policy-status a odrl:Policy ;
+          odrl:uid ex:policy-status ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assignee ex:user ;
+            odrl:target ex:service ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:Status ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand dpv:ConsentStatusValidForProcessing ] ] .
+      </code></pre>
+    </aside>
+    <p>
+      DPV's processing concepts can be used as left operands to indicate further contextual processing information related to a certain process or activity.
+    </p>
+    <aside class="example" title="Example specifying that the usage of a certain asset is only allowed if there is human oversight involved.">
+      <pre><code>
+        ex:policy-hi a odrl:Policy ;
+          odrl:uid ex:policy-hi ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:data-subject ;
+            odrl:assignee ex:user ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:HumanInvolvement ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand dpv:HumanInvolvementForOversight ] ] .
+      </code></pre>
+    </aside>
+  </section>
+  <section>
+    <h3>Rules</h3>
+    <p>DPV's permissions, prohibitions and obligations can be mapped to ODRL's permissions, prohibitions and duties, respectively.</p>
+    <aside class="example" title="Example specifying a mapping from a DPV Permission to an ODRL Permission">
+      <p>A DPV permission describing the usage of bank account information for the purpose of payment management:</p>
+      <pre><code>
+        ex:AlphaPaymentManagement a dpv:Permission ;
+          dpv:hasPersonalData pd:BankAccount ;
+          dpv:hasProcessing dpv:Use ;
+          dpv:hasPurpose dpv:PaymentManagement .
+      </code></pre>
+      <p>Can be defined as the following ODRL permission:</p>
+      <pre><code>
+      ex:policy-AlphaPaymentManagement a odrl:Permission ;
+        odrl:target dpv-odrl:BankAccount ;
+        odrl:action dpv-odrl:Use ;
+        odrl:constraint [
+          odrl:leftOperand dpv-odrl:Purpose ;
+          odrl:operator odrl:isA ;
+          odrl:rightOperand dpv:PaymentManagement ] ] .
       </code></pre>
     </aside>
   </section>
 </section>
 
-<section id="odrl-operators">
-  <h2>Usage of ODRL operators</h2>
-  <aside class="issue" title="Missing semantic operators">
-    <p>
-       The ODRL vocabulary does not contain operators to evaluate semantic relations such as `a subclass of`.
-       It also does not provide any operator to express that multiple relations are possible, e.g., the left operand
-       can be an instance, a subclass, or an instance of a subclass, of the right operand.
-       This issue is also being tracked in the ODRL CG, in issue
-       <a href="https://github.com/w3c/odrl/issues/28">#28</a>.
-    </p>
-  </aside>
-  <aside class="issue" title="Missing negation operator for instances">
-    <p>
-       The ODRL vocabulary does not contain an `is not a` operator to express that something is not an instance of the right operand.
-       This issue is also being tracked in the ODRL CG, in issue
-       <a href="https://github.com/w3c/odrl/issues/27">#27</a>.
-    </p>
+<section id="shacl">
+  <h2>SHACL Shapes for Constraint Validation</h2>
+  <p>
+    Beyond specifying examples, we recommend the usage of [[SHACL]] shapes to
+    validate DPV-ODRL-based policies. While such shapes already exist to validate core ODRL constructs,
+    the same exercise is needed for the policies described in this mapping, in particular to validate the usage of
+    left operands. In this context, the ODRL vocabulary has a set of 12
+    defined constraint operators to express the relation between left and right operands. Given that multiple
+    operators can be used to restrict this relation, the left operand and operator usage should be refined for
+    each left operand. As such, the following template for a SPARQL-based SHACL constraint can be used to
+    detect the usage of an invalid operator for a given left operand.
+  </p>
+  <aside class="example" title="Template shape to detect the usage of an invalid operator for a given left operand">
+    <pre><code>
+      ex:ConstraintShapeTemplate a sh:NodeShape ;
+        sh:targetClass odrl:Constraint ;
+        sh:sparql [
+          a sh:SPARQLConstraint ;
+          sh:message "Invalid operator for given left operand." ;
+          sh:prefixes odrl: ;
+          sh:select """
+            SELECT $this WHERE {
+            $this odrl:leftOperand <LEFT_OPERAND> .
+            $this odrl:operator ?op .
+            FILTER(?op NOT IN (<ALLOWED_OPERATORS>))
+            }
+          """ ] .
+    </code></pre>
   </aside>
 </section>
 
