@@ -22,6 +22,10 @@
     doJsonLd: true,
     lint: { "no-unused-dfns": false },
     editors: [{
+      "name": "Beatriz Esteves",
+      url: "https://w3id.org/people/besteves",
+      "company": "{{ "Beatriz Esteves" | generate_author_affiliation }}"
+    }, {
       name: "Harshvardhan J. Pandit",
       url: "https://harshp.com",
       "company": "{{ "Harshvardhan J. Pandit" | generate_author_affiliation }}"
@@ -414,7 +418,7 @@
     </aside>
   </section>
   <section>
-    <h3>Status</h3>
+    <h3>Status & Processing Context</h3>
     <p>
       DPV's status concepts can be used as left operands to indicate the status of a certain process or activity.
     </p>
@@ -433,6 +437,25 @@
               odrl:rightOperand dpv:ConsentStatusValidForProcessing ] ] .
       </code></pre>
     </aside>
+    <p>
+      DPV's processing concepts can be used as left operands to indicate further contextual processing information related to a certain process or activity.
+    </p>
+    <aside class="example" title="Example specifying that the usage of a certain asset is only allowed if there is human oversight involved.">
+      <pre><code>
+        ex:policy-hi a odrl:Policy ;
+          odrl:uid ex:policy-hi ;
+          odrl:profile dpv-odrl: ;
+          odrl:permission [
+            odrl:assigner ex:data-subject ;
+            odrl:assignee ex:user ;
+            odrl:target ex:asset ;
+            odrl:action dpv-odrl:Use ;
+            odrl:constraint [
+              odrl:leftOperand dpv-odrl:HumanInvolvement ;
+              odrl:operator odrl:eq ;
+              odrl:rightOperand dpv:HumanInvolvementForOversight ] ] .
+      </code></pre>
+    </aside>
   </section>
   <section>
     <h3>Rules</h3>
@@ -447,8 +470,7 @@
       </code></pre>
       <p>Can be defined as the following ODRL permission:</p>
       <pre><code>
-      ex:policy-Al
-      phaPaymentManagement a odrl:Permission ;
+      ex:policy-AlphaPaymentManagement a odrl:Permission ;
         odrl:target dpv-odrl:BankAccount ;
         odrl:action dpv-odrl:Use ;
         odrl:constraint [
@@ -458,6 +480,37 @@
       </code></pre>
     </aside>
   </section>
+</section>
+
+<section id="shacl">
+  <h2>SHACL Shapes for Constraint Validation</h2>
+  <p>
+    Beyond specifying examples, we recommend the usage of [[SHACL]] shapes to
+    validate DPV-ODRL-based policies. While such shapes already exist to validate core ODRL constructs,
+    the same exercise is needed for the policies described in this mapping, in particular to validate the usage of
+    left operands. In this context, the ODRL vocabulary has a set of 12
+    defined constraint operators to express the relation between left and right operands. Given that multiple
+    operators can be used to restrict this relation, the left operand and operator usage should be refined for
+    each left operand. As such, the following template for a SPARQL-based SHACL constraint can be used to
+    detect the usage of an invalid operator for a given left operand.
+  </p>
+  <aside class="example" title="Template shape to detect the usage of an invalid operator for a given left operand">
+    <pre><code>
+      ex:ConstraintShapeTemplate a sh:NodeShape ;
+        sh:targetClass odrl:Constraint ;
+        sh:sparql [
+          a sh:SPARQLConstraint ;
+          sh:message "Invalid operator for given left operand." ;
+          sh:prefixes odrl: ;
+          sh:select """
+            SELECT $this WHERE {
+            $this odrl:leftOperand <LEFT_OPERAND> .
+            $this odrl:operator ?op .
+            FILTER(?op NOT IN (<ALLOWED_OPERATORS>))
+            }
+          """ ] .
+    </code></pre>
+  </aside>
 </section>
 
 {% block ACKNOWLEDGEMENTS %}
