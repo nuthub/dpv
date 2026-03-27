@@ -879,7 +879,7 @@
 	  </figure>
 	  <div class="list-hierarchy"><ul class="concept-list">
   <li>
-    <strong>de-gdng:Anonymization</strong>: Personal data processed under § 6(1) GDNG has to be anonymized, if allowed by the therein defined pruposes
+    <strong>de-gdng:Anonymization</strong>: Personal data processed under § 6(1) GDNG has to be anonymized, as soon as possible by the therein defined purposes
       <small><a href="https://w3id.org/dpv/legal/de/gdng#Anonymization" class="local-link">go to full definition</a></small>
       
   </li>
@@ -974,7 +974,7 @@
       
   </li>
   <li>
-    <strong>de-gdng:Transfer</strong>: Transfer of personal data to a third party
+    <strong>de-gdng:Transfer</strong>: Transfer of personal data to a third party of §6(3) GDNG
       <small><a href="https://w3id.org/dpv/legal/de/gdng#Transfer" class="local-link">go to full definition</a></small>
       
   </li>
@@ -1030,7 +1030,7 @@
 
 <tr>
           <th>Definition</th>
-          <td><i>Personal data processed under § 6(1) GDNG has to be anonymized, if allowed by the therein defined pruposes</i></td>
+          <td><i>Personal data processed under § 6(1) GDNG has to be anonymized, as soon as possible by the therein defined purposes</i></td>
         </tr>        
        
        
@@ -2052,13 +2052,27 @@
         
         <tr class="technical-detail">
           <th>Type</th>
-          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a></td>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a>, <a href="https://w3id.org/dpv#OrganisationalMeasure" class="local-link">dpv:OrganisationalMeasure</a></td>
         </tr>
        
-      
+        <tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>            <a href="https://w3id.org/dpv#DataDeletionPolicy" class="local-link">dpv:DataDeletionPolicy</a>
+             →             <a href="https://w3id.org/dpv#DataProcessingPolicy" class="local-link">dpv:DataProcessingPolicy</a>
+             →             <a href="https://w3id.org/dpv#Policy" class="local-link">dpv:Policy</a>
+             →             <a href="https://w3id.org/dpv#GovernanceProcedures" class="local-link">dpv:GovernanceProcedures</a>
+             →             <a href="https://w3id.org/dpv#OrganisationalMeasure" class="local-link">dpv:OrganisationalMeasure</a>
+             →             <a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure" class="local-link">dpv:TechnicalOrganisationalMeasure</a>
+                        </td>        </tr>      
       
        
-
+<tr>
+          <th>Object of relation</th>
+          <td>            <a href="https://w3id.org/dpv#hasOrganisationalMeasure" class="local-link">dpv:hasOrganisationalMeasure</a>, 
+            <a href="https://w3id.org/dpv#hasPolicy" class="local-link">dpv:hasPolicy</a>, 
+            <a href="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure" class="local-link">dpv:hasTechnicalOrganisationalMeasure</a>
+</td>
+        </tr>
         
         
         
@@ -3368,13 +3382,22 @@
         
         <tr class="technical-detail">
           <th>Type</th>
-          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a></td>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose" class="local-link">dpv:Purpose</a></td>
         </tr>
        
-      
+        <tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>            <a href="https://w3id.org/dpv#ScientificResearch" class="local-link">dpv:ScientificResearch</a>
+             →             <a href="https://w3id.org/dpv#ResearchAndDevelopment" class="local-link">dpv:ResearchAndDevelopment</a>
+             →             <a href="https://w3id.org/dpv#Purpose" class="local-link">dpv:Purpose</a>
+                        </td>        </tr>      
       
        
-
+<tr>
+          <th>Object of relation</th>
+          <td>            <a href="https://w3id.org/dpv#hasPurpose" class="local-link">dpv:hasPurpose</a>
+</td>
+        </tr>
         
         
         
@@ -3687,13 +3710,20 @@
         
         <tr class="technical-detail">
           <th>Type</th>
-          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a></td>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis" class="local-link">dpv:LegalBasis</a></td>
         </tr>
        
-      
+        <tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>            <a href="https://w3id.org/dpv#LegalBasis" class="local-link">dpv:LegalBasis</a>
+                        </td>        </tr>      
       
        
-
+<tr>
+          <th>Object of relation</th>
+          <td>            <a href="https://w3id.org/dpv#hasLegalBasis" class="local-link">dpv:hasLegalBasis</a>
+</td>
+        </tr>
         
         
         
@@ -3761,13 +3791,20 @@
         
         <tr class="technical-detail">
           <th>Type</th>
-          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a></td>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis" class="local-link">dpv:LegalBasis</a></td>
         </tr>
        
-      
+        <tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>            <a href="https://w3id.org/dpv#LegalBasis" class="local-link">dpv:LegalBasis</a>
+                        </td>        </tr>      
       
        
-
+<tr>
+          <th>Object of relation</th>
+          <td>            <a href="https://w3id.org/dpv#hasLegalBasis" class="local-link">dpv:hasLegalBasis</a>
+</td>
+        </tr>
         
         
         
@@ -3835,13 +3872,20 @@
         
         <tr class="technical-detail">
           <th>Type</th>
-          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a></td>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis" class="local-link">dpv:LegalBasis</a></td>
         </tr>
        
-      
+        <tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>            <a href="https://w3id.org/dpv#LegalBasis" class="local-link">dpv:LegalBasis</a>
+                        </td>        </tr>      
       
        
-
+<tr>
+          <th>Object of relation</th>
+          <td>            <a href="https://w3id.org/dpv#hasLegalBasis" class="local-link">dpv:hasLegalBasis</a>
+</td>
+        </tr>
         
         
         
@@ -5164,7 +5208,7 @@
         
 <tr>
           <th>Source</th>
-          <td><i>[[GDNG]] § 3(2) point 9</i></td>
+          <td><i>[[GDNG]] § 3(2) point 9, [[GDNG]] § 4(5), https://www.bfarm.de/EN/BfArM/Tasks/Data-Access-and-Coordination-Office/Secure-processing-environment/_artikel.html</i></td>
         </tr>       
         
         <tr class="table-separator"></tr>
@@ -5381,13 +5425,21 @@
         
         <tr class="technical-detail">
           <th>Type</th>
-          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a></td>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class" class="local-link">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept" class="local-link">skos:Concept</a>, <a href="https://w3id.org/dpv#Processing" class="local-link">dpv:Processing</a></td>
         </tr>
        
-      
+        <tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>            <a href="https://w3id.org/dpv#Transfer" class="local-link">dpv:Transfer</a>
+             →             <a href="https://w3id.org/dpv#Processing" class="local-link">dpv:Processing</a>
+                        </td>        </tr>      
       
        
-
+<tr>
+          <th>Object of relation</th>
+          <td>            <a href="https://w3id.org/dpv#hasProcessing" class="local-link">dpv:hasProcessing</a>
+</td>
+        </tr>
         
         
         
@@ -5396,7 +5448,7 @@
 
 <tr>
           <th>Definition</th>
-          <td><i>Transfer of personal data to a third party</i></td>
+          <td><i>Transfer of personal data to a third party of §6(3) GDNG</i></td>
         </tr>        
        
        

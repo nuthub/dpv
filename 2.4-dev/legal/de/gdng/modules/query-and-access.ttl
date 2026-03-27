@@ -126,10 +126,10 @@ de-gdng:SecureProcessingEnvironment a rdfs:Class,
     dct:contributor _:person-christian-henke,
         _:person-julian-flake ;
     dct:created "2025-10-13"^^xsd:date ;
-    dct:source "[[GDNG]] § 3(2) point 9"@en ;
+    dct:source "[[GDNG]] § 3(2) point 9, [[GDNG]] § 4(5), https://www.bfarm.de/EN/BfArM/Tasks/Data-Access-and-Coordination-Office/Secure-processing-environment/_artikel.html"@en ;
     rdfs:isDefinedBy de-gdng: ;
     rdfs:subClassOf dpv:SecureProcessingEnvironment ;
-    sw:term_status "accepted"@en ;
+    sw:term_status "modified"@en ;
     skos:broader dpv:SecureProcessingEnvironment ;
     skos:definition "Durch die DACO konzeptionierte Maßnahme zur Verbesserung des Datenschutzes und der Datensicherheit im Rahmen der Weiterverarbeitung von Gesundheitsdaten zu Forschungszwecken und weiteren im Gemeinwohl liegenden Zwecken"@de,
         "A measure for improvement of data protection and information security in context of processing of health data for research purposes and common welfare, drafted by the DACO"@en ;
