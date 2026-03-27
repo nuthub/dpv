@@ -187,9 +187,8 @@ SCHEMA['ieee-7012-terms'].update({
     'HumanDescription': vocab_funcs.ieee_7012_human_label,
     })
 
-SCHEMA['gdng-classes'] = SCHEMA['classes'].copy()
+SCHEMA['gdng-classes'] = SCHEMA['taxonomy'].copy()
 SCHEMA['gdng-classes'].update({
-    'ParentTerms': vocab_funcs.construct_parent,
     'Label (en)': vocab_funcs.construct_label, # @en
     'Label (de)': vocab_funcs.construct_label_de, # @de
     'Definition (en)': vocab_funcs.construct_definition,
