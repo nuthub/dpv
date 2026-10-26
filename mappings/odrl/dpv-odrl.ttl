@@ -14,10 +14,63 @@
 @prefix ai: <https://w3id.org/dpv/ai#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix profile: <http://www.w3.org/ns/dx/prof/> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
 @prefix dpv-odrl: <https://w3id.org/dpv/mappings/odrl#> .
 
+# Ontology Metadata #
+
+<https://w3id.org/dpv/mappings/odrl> a owl:Ontology, profile:Profile ;
+	profile:isProfileOf <http://www.w3.org/ns/odrl/2/core> ;
+	profile:hasResource dpv-odrl:profile-html, dpv-odrl:profile-ttl ;
+	dcterms:title "Mapping from DPV to ODRL"@en ;
+	vann:preferredNamespacePrefix "dpv-odrl" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/mappings/odrl#"^^xsd:string ;
+	rdfs:label "Mapping from DPV to ODRL"@en ;
+	# owl:versionInfo "2.3"^^xsd:string ;
+	# owl:versionIRI <https://w3id.org/dpv/mappings/odrl/2.3#> ;
+	# owl:priorVersion <https://w3id.org/dpv/mappings/odrl/2.2#> ;
+	dcterms:created "2025-01-16"^^xsd:date ;
+	dcterms:modified "2026-10-26"^^xsd:date ;
+	dcterms:issued "2026-10-26"^^xsd:date ;
+	dcterms:creator "Beatriz Esteves", "Harshvardhan J. Pandit" ;
+	dcterms:publisher "Beatriz Esteves" ;
+	dcterms:abstract "The 'Mapping from DPV to ODRL' uses the Open Digital Rights Language (ODRL) to define usage control policies that express permissions, prohibitions and duties associated with data and digital services and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
+	dcterms:description "The 'Mapping from DPV to ODRL' uses the Open Digital Rights Language (ODRL) to define usage control policies that express permissions, prohibitions and duties associated with data and digital services and utilises the Data Privacy Vocabulary (DPV) as a controlled vocabulary for invoking privacy and data protection-specific terms."@en ;
+	rdfs:comment "This is the RDF ontology for the Mapping from DPV to ODRL."@en ;
+	dcterms:bibliographicCitation "Cite this vocabulary as: Esteves, B., Pandit, H. J. (2026). Bridging DPV and ODRL for Legally-Oriented Usage Control in Data Spaces. (Accepted to be Published) Fourth International Workshop on Semantics in Dataspaces (SDS 2026)"@en ;
+	# bibo:doi "10.5281/zenodo.10247115"@en ;
+	# foaf:logo <> ;
+	sw:term_status "stable"@en ;
+	dcterms:source <http://www.w3.org/ns/odrl/2/>, <https://w3id.org/dpv> ;
+	dcterms:license <https://www.w3.org/community/about/process/cla/> .
+
+dpv-odrl:profile-html a profile:ResourceDescriptor ;
+    profile:hasRole role:specification ;
+    profile:hasArtifact <https://w3c-cg.github.io/dpv/mappings/odrl/> ;
+    dcterms:title "Mapping from DPV to ODRL HTML specification"@en ;
+    dcterms:format <https://www.iana.org/assignments/media-types/text/html> ;
+    dcterms:conformsTo <https://www.w3.org/TR/html/> .
+
+dpv-odrl:profile-ttl a profile:ResourceDescriptor ;
+    profile:hasRole role:vocabulary ;
+    profile:hasArtifact <https://w3c-cg.github.io/dpv/mappings/odrl/dpv-odrl.ttl> ;
+    dcterms:title "Mapping from DPV to ODRL Turtle vocabulary"@en ;
+    dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
+    dcterms:conformsTo <https://www.w3.org/TR/turtle/> .
+
 # DPV entities - ODRL mapping #
+
+<https://w3id.org/dpv/mappings/odrl#entityPartyConcepts> a skos:Collection ;
+    skos:prefLabel "DPV entities mapping terms"@en ;
+    skos:scopeNote "Mapping from DPV to ODRL terms"@en ;
+    skos:member dpv-odrl:Entity, dpv-odrl:Agent, dpv-odrl:LegalEntity, dpv-odrl:HumanSubject,
+		dpv-odrl:Organisation, dpv-odrl:Recipient, dpv-odrl:Actor .
 
 dpv-odrl:Entity a odrl:Party, odrl:LeftOperand, skos:Concept ;
 	skos:exactMatch dpv:Entity ;
@@ -53,6 +106,13 @@ dpv-odrl:Actor a odrl:Party, odrl:LeftOperand, skos:Concept ;
 ### 	skos:exactMatch dpv:Patient .
 
 # DPV processing - ODRL action mapping #
+
+<https://w3id.org/dpv/mappings/odrl#processingActionConcepts> a skos:Collection ;
+    skos:prefLabel "DPV processing mapping terms"@en ;
+    skos:scopeNote "Mapping from DPV to ODRL terms"@en ;
+    skos:member dpv-odrl:Processing, dpv-odrl:Tracking, dpv-odrl:Aggregate, dpv-odrl:Anonymise,
+		dpv-odrl:Delete, dpv-odrl:Derive, dpv-odrl:Display, dpv-odrl:Modify, dpv-odrl:Move,
+		dpv-odrl:Transfer, dpv-odrl:Transform, dpv-odrl:Use .
 
 dpv-odrl:Processing a odrl:Action, skos:Concept ;
 	skos:exactMatch dpv:Processing .
@@ -107,6 +167,12 @@ dpv-odrl:Use a odrl:Action, skos:Concept ;
 
 # DPV data - ODRL mapping #
 
+<https://w3id.org/dpv/mappings/odrl#dataAssetConcepts> a skos:Collection ;
+    skos:prefLabel "DPV data mapping terms"@en ;
+    skos:scopeNote "Mapping from DPV to ODRL terms"@en ;
+    skos:member dpv-odrl:Data, dpv-odrl:PersonalData, dpv-odrl:Age, dpv-odrl:Gender,
+		dpv-odrl:Nationality, dpv-odrl:DataSource .
+
 dpv-odrl:Data a odrl:Asset, skos:Concept, odrl:LeftOperand ;
 	skos:exactMatch dpv:Data ;
 	skos:note "Only the odrl:isA, odrl:eq, odrl:neq, odrl:isAnyOf, and odrl:isNoneOf operators MUST be used."@en .
@@ -136,6 +202,11 @@ dpv-odrl:DataSource a odrl:LeftOperand, skos:Concept ;
 ### 	skos:exactMatch pd:Name .
 
 # DPV tech - ODRL mapping #
+
+<https://w3id.org/dpv/mappings/odrl#techAssetConcepts> a skos:Collection ;
+    skos:prefLabel "DPV technology mapping terms"@en ;
+    skos:scopeNote "Mapping from DPV to ODRL terms"@en ;
+    skos:member dpv-odrl:Technology .
 
 dpv-odrl:Technology a odrl:Asset, skos:Concept, odrl:LeftOperand ;
 	skos:exactMatch dpv:Technology ;
@@ -287,7 +358,23 @@ dpv-odrl:Scale a odrl:LeftOperand, skos:Concept ;
 	skos:exactMatch dpv:Scale ;
 	skos:note "Only the odrl:isA, odrl:eq, odrl:neq, odrl:isAnyOf, and odrl:isNoneOf operators MUST be used."@en .
 
+<https://w3id.org/dpv/mappings/odrl#leftOperandConcepts> a skos:Collection ;
+    skos:prefLabel "Left operand terms"@en ;
+    skos:scopeNote "Mapping from DPV to ODRL terms"@en ;
+    skos:member dpv-odrl:Purpose, dpv-odrl:TechnicalOrganisationalMeasure, dpv-odrl:TechnicalMeasure,
+		dpv-odrl:OrganisationalMeasure, dpv-odrl:LegalMeasure, dpv-odrl:PhysicalMeasure, dpv-odrl:RiskMitigationMeasure,
+		dpv-odrl:Location, dpv-odrl:Law, dpv-odrl:LegalBasis, dpv-odrl:ConsentControl, dpv-odrl:ContractControl,
+		dpv-odrl:Duration, dpv-odrl:Frequency, dpv-odrl:Right, dpv-odrl:Justification, dpv-odrl:Risk,
+		dpv-odrl:RiskLevel, dpv-odrl:RiskControl, dpv-odrl:Likelihood, dpv-odrl:Severity, dpv-odrl:Consequence,
+		dpv-odrl:Impact, dpv-odrl:Sector, dpv-odrl:Status, dpv-odrl:AutomationLevel, dpv-odrl:EntityInvolvement,
+		dpv-odrl:HumanInvolvement, dpv-odrl:ProcessingLocation, dpv-odrl:Scale .
+
 # DPV rules - ODRL mapping #
+
+<https://w3id.org/dpv/mappings/odrl#rulesConcepts> a skos:Collection ;
+    skos:prefLabel "Rule terms"@en ;
+    skos:scopeNote "Mapping from DPV to ODRL terms"@en ;
+    skos:member dpv-odrl:Permission, dpv-odrl:Prohibition, dpv-odrl:Obligation .
 
 dpv-odrl:Permission skos:exactMatch dpv:Permission ;
 	skos:closeMatch odrl:Permission .
@@ -299,6 +386,15 @@ dpv-odrl:Obligation skos:exactMatch dpv:Obligation ;
 	skos:closeMatch odrl:Duty .
 
 # DPV contractual clauses, legal agreements & policies - ODRL mapping #
+
+<https://w3id.org/dpv/mappings/odrl#policiesConcepts> a skos:Collection ;
+    skos:prefLabel "Policy terms"@en ;
+    skos:scopeNote "Mapping from DPV to ODRL terms"@en ;
+    skos:member dpv-odrl:ContractAmendmentClause, dpv-odrl:ContractConfidentialityClause,
+		dpv-odrl:ContractDisputeResolutionClause, dpv-odrl:ContractJurisdictionClause,
+		dpv-odrl:ContractTerminationClause, dpv-odrl:TermsOfService, dpv-odrl:DataHandlingClause,
+		dpv-odrl:LegalAgreement, dpv-odrl:ConfidentialityAgreement, dpv-odrl:NDA, 
+		dpv-odrl:StatisticalConfidentialityAgreement .
 
 dpv-odrl:ContractAmendmentClause a rdfs:Class , owl:Class, skos:Concept ;
 	skos:exactMatch dpv:ContractAmendmentClause ;
