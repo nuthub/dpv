@@ -1,0 +1,36 @@
+# Using the x-ray image is permitted
+# - for medical rehab and nursing research only
+# - if Legal Basis P6-1 applies
+# - if pseudonymization is applied
+
+@prefix dpv: <https://w3id.org/dpv/2.3#> .
+@prefix sector-health: <https://w3id.org/dpv/2.3/sector/health> .
+@prefix de-gdng: <https://w3id.org/dpv/2.3/legal/de/gdng#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix dpv-odrl: <https://w3id.org/dpv/mappings/odrl#> .
+@prefix ex: <http://example.com/> .
+
+ex:x-ray-image-1 a dpv:PersonalData . 
+ex:policy-1
+  a odrl:Policy, odrl:Set ;
+  odrl:uid ex:policy-1 ;
+  odrl:profile dpv-odrl: ;
+  odrl:permission [
+    odrl:assignee [ a de-gdng:HealthDataHolder ] ;
+    odrl:target ex:x-ray-image-1 ;
+    odrl:action odrl:use ;
+    odrl:constraint
+      [
+	odrl:leftOperand dpv-odrl:Purpose ;
+	odrl:operator odrl:isA ;
+	odrl:rightOperand de-gdng:MedicalRehabNursingResearch
+      ] , [
+	odrl:leftOperand dpv-odrl:LegalBasis ;
+	odrl:operator odrl:isA ;
+	odrl:rightOperand de-gdng:P6-1
+      ] , [
+	odrl:leftOperand dpv-odrl:TechnicalOrganisationalMeasure ;
+	odrl:operator odrl:isA ;
+	odrl:rightOperand de-gdng:Pseudonymization
+      ]
+  ].
